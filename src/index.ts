@@ -13,19 +13,19 @@ let proxyDenyList: Array<string> = [];
 let lastUsedProxyIndex = 0;
 
 export const getRandomProxy = () => {
-    if (!proxyCache.length) {
-        throw new Error('proxyCache is empty');
+    if (!proxyAllowList.length) {
+        throw new Error('proxyAllowList is empty');
     }
-    lastUsedProxyIndex = Math.floor(Math.random() * proxyCache.length);
-    return proxyCache[lastUsedProxyIndex].url;
+    lastUsedProxyIndex = Math.floor(Math.random() * proxyAllowList.length);
+    return proxyAllowList[lastUsedProxyIndex];
 }
 
 export const getNextProxy = () => {
-    if (!proxyCache.length) {
-        throw new Error('proxyCache is empty');
+    if (!proxyAllowList.length) {
+        throw new Error('proxyAllowList is empty');
     }
-    lastUsedProxyIndex = (lastUsedProxyIndex + 1) % proxyCache.length;
-    return proxyCache[lastUsedProxyIndex].url;
+    lastUsedProxyIndex = (lastUsedProxyIndex + 1) % proxyAllowList.length;
+    return proxyAllowList[lastUsedProxyIndex];
 }
 
 export const updateProxyCache = async () => {

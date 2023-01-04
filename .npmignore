@@ -1,0 +1,4 @@
+allowlist.json
+denylist.json
+src/
+tsconfig.json

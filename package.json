@@ -1,0 +1,23 @@
+{
+  "name": "free-proxy-finder",
+  "version": "1.0.0",
+  "description": "Free Proxy Finder",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx rimraf ./build && tsc",
+    "start": "npm run build && node ./build/index.js"
+  },
+  "author": "Eric Blade",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "free-proxy": "^0.2.1",
+    "https-proxy-agent": "^5.0.1",
+    "node-fetch": "^3.3.0"
+  }
+}
